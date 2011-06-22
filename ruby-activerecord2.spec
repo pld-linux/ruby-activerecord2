@@ -2,19 +2,19 @@
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-%{pkgname}
-Version:	3.0.3
+Version:	2.3.5
 Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	4dfaec6d511ad50ede13092f1abadff0
+# Source0-md5:	48a9ab7fbac97478fac9722fb5e14cda
+Patch0:		%{name}-rubygems.patch
 URL:		http://rubyforge.org/projects/activerecord/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
-Requires:	ruby-activesupport >= 3.0.3
-Requires:	ruby-activemodel >= 3.0.3
+Requires:	ruby-activesupport >= 2.3.5
 Obsoletes:	ruby-ActiveRecord
 Provides:	ruby-ActiveRecord
 #BuildArch:	noarch
@@ -57,6 +57,8 @@ Dokumentacji w formacie ri dla %{pkgname}.
 %prep
 %setup -q -c
 %{__tar} xf %{SOURCE0} -O data.tar.gz | %{__tar} xz
+find -newer README  -o -print | xargs touch --reference %{SOURCE0}
+%patch0 -p1
 
 # cleanup backups after patching
 find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
@@ -80,9 +82,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG examples
+%doc CHANGELOG README examples
 %{ruby_rubylibdir}/active_record
 %{ruby_rubylibdir}/active_record.rb
+%{ruby_rubylibdir}/activerecord.rb
 
 %files rdoc
 %defattr(644,root,root,755)
