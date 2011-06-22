@@ -1,7 +1,7 @@
 %define pkgname activerecord
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
-Name:		ruby-%{pkgname}
+Name:		ruby-activerecord2
 Version:	2.3.5
 Release:	1
 License:	Ruby-alike
@@ -14,7 +14,7 @@ BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
-Requires:	ruby-activesupport >= 2.3.5
+Requires:	ruby-activesupport = 2.3.5
 Obsoletes:	ruby-ActiveRecord
 Provides:	ruby-ActiveRecord
 #BuildArch:	noarch
