@@ -17,6 +17,7 @@ BuildRequires:	ruby-modules
 Requires:	ruby-activesupport = 2.3.5
 Obsoletes:	ruby-ActiveRecord
 Provides:	ruby-ActiveRecord
+Provides:	ruby-activerecord = %{version}
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
