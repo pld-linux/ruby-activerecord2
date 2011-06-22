@@ -8,7 +8,7 @@ License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
 # Source0-md5:	48a9ab7fbac97478fac9722fb5e14cda
-Patch0:		%{name}-rubygems.patch
+Patch0:		ruby-activerecord-rubygems.patch
 URL:		http://rubyforge.org/projects/activerecord/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby >= 1:1.8.6
