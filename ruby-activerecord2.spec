@@ -2,19 +2,19 @@
 Summary:	Object-Relational mapping library for Ruby
 Summary(pl.UTF-8):	Biblioteka odwzorowań obiektowo-relacyjnych dla Ruby
 Name:		ruby-activerecord2
-Version:	2.3.11
+Version:	2.3.14
 Release:	1
 License:	Ruby-alike
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	531b37f3217ce0431b18ad8aa9dabc9b
+# Source0-md5:	412f03f155bf0704c8ecb211a5d9da16
 Patch0:		ruby-activerecord-rubygems.patch
 URL:		http://rubyforge.org/projects/activerecord/
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby >= 1:1.8.6
 BuildRequires:	ruby-modules
 %{?ruby_mod_ver_requires_eq}
-Requires:	ruby-activesupport = 2.3.11
+Requires:	ruby-activesupport = 2.3.14
 Obsoletes:	ruby-ActiveRecord
 Provides:	ruby-ActiveRecord
 Provides:	ruby-activerecord = %{version}
