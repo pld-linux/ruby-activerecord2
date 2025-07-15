@@ -59,7 +59,7 @@ Dokumentacji w formacie ri dla %{pkgname}.
 %setup -q -c
 %{__tar} xf %{SOURCE0} -O data.tar.gz | %{__tar} xz
 find -newer README  -o -print | xargs touch --reference %{SOURCE0}
-%patch0 -p1
+%patch -P0 -p1
 
 # cleanup backups after patching
 find '(' -name '*~' -o -name '*.orig' ')' -print0 | xargs -0 -r -l512 rm -f
